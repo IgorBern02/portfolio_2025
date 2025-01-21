@@ -1,0 +1,36 @@
+.menu {
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 100%;
+  height: 25vh;
+  /* background-color: #333; */
+  transition: all 0.5s ease-in-out;
+}
+
+.menu.open {
+  right: 0;
+}
+
+/* .gradientMenu {
+  animation: gradientAnimation 10s ease infinite;
+  background: linear-gradient(45deg, #6d28d9, #ec4899);
+  background-size: 400% 400%;
+} */
+
+/* @keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(45deg, #6d28d9, #ec4899);
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background: linear-gradient(45deg, #ec4899, #6d28d9);
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background: linear-gradient(45deg, #6d28d9, #ec4899);
+    background-position: 0% 50%;
+  }
+} */

@@ -1,0 +1,17 @@
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-100px) scale(1);
+  }
+  50% {
+    transform: translateY(0) scale(1.2);
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+  }
+}
