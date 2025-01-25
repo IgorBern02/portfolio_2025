@@ -10,8 +10,10 @@ function projetos({ projeto }) {
             <img src={proj.img} alt={proj.name} />
           </div>
           <section className="w-full text-wrap flex flex-col gap-3">
-            <h1 className="font-semibold text-xl font-mono md:text-2xl">{proj.name}</h1>
-            <p className="font-mono text-base md:text-lg">{proj.desc}</p>
+            <h1 className="font-semibold text-xl font-mono md:text-2xl">
+              {proj.name}
+            </h1>
+            <p className="font-mono text-base md:text-xl">{proj.desc}</p>
           </section>
           <section className="flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 w-full">
             <a href={proj.github} target="_blank">
