@@ -16,10 +16,10 @@ function App() {
         <div className="mt-20  h-auto w-full gap-10 flex flex-col">
           <AboutMe />
           <Showcase />
-          <Skills />
-          <Projects />
+          {/* <Skills />
+          <Projects /> */}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </section>
   );

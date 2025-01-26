@@ -1,0 +1,13 @@
+.focus:focus {
+  background-image: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246)";
+}
+
+.content {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute; /* Para sobrepor os componentes */
+}
+
+.content.active {
+  opacity: 1;
+}
