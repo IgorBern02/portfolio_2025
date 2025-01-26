@@ -1,6 +1,23 @@
-import TypingText from "./typingText";
+// import TypingText from "./typingText";
+import React, { memo, useState, useEffect } from "react";
 
-function aboutMe() {
+const TypingText = ({ text, delay }) => {
+  const [typedText, setTypedText] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (typedText !== text) {
+        setTypedText(typedText + text[typedText.length]);
+      }
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [typedText, text, delay]);
+
+  return <p>{typedText}</p>;
+};
+
+const ModelAboutMe = memo(() => {
   return (
     <div
       id="sobreMim"
@@ -77,6 +94,10 @@ function aboutMe() {
       </div>
     </div>
   );
-}
+});
 
-export default aboutMe;
+const AboutMe = () => {
+  return <ModelAboutMe />;
+};
+
+export default memo(AboutMe);

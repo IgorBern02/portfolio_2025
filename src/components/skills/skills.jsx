@@ -55,11 +55,6 @@ const tecno = [
 function skills() {
   return (
     <section className="w-full h-2/4 p-2 flex flex-col justify-around items-center gap-10 z-20 ">
-      {/* <div className="w-3/6 h-auto p-4 relative right-3 rounded-r-full bg-bgProjetos md:w-2/6 xl:w-1/5 xl:right-[520px]">
-        <h1 className="text-xl text-right mr-4 text-white font-mono bg-transparent md:text-2xl ">
-          Conhecimento
-        </h1>
-      </div> */}
       <Props tecno={tecno} />
     </section>
   );
