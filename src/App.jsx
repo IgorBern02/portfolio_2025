@@ -19,10 +19,7 @@ function App() {
         <div>
           <Contact />
         </div>
-        {/* <div className="w-full bg-blue-500 p-2 mt-[1500px]">
-          <Contact />
-        </div> */}
-        {/* <Footer /> */}
+        <Footer />
       </section>
     </section>
   );

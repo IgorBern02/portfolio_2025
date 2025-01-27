@@ -126,7 +126,7 @@ const ModalProjects = memo(({ projects }) => {
 
 const Projects = () => {
   return (
-    <section className="w-full h-auto gap-10 p-2 flex flex-col ">
+    <section className="w-full h-auto gap-10 p-2 flex flex-col z-50">
       <ModalProjects projects={arrayprojects} />
     </section>
   );

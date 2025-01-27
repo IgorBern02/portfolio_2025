@@ -1,9 +1,11 @@
 import React, { memo } from "react";
 
+const numberWpp = "5513991246604";
+
 const contacts = [
   {
     name: "Whatsapp",
-    url: "https://youtube.com",
+    url: `https://api.whatsapp.com/send?phone=${numberWpp}`,
     img: (
       <svg
         class="w-8 h-8 text-white"
@@ -29,7 +31,7 @@ const contacts = [
   },
   {
     name: "GitHub",
-    url: "https://youtube.com",
+    url: "https://github.com/IgorBern02",
     img: (
       <svg
         class="w-8 h-8 text-white"
@@ -74,18 +76,19 @@ const contacts = [
 
 const ModalContact = memo(() => {
   return (
-    <section className="w-full h-auto bg-red-800 p-3 flex flex-col justify-center items-center ">
+    <section className="w-full h-auto  p-3 flex flex-col justify-center items-center z-50">
       <div>
         <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
           Contato
         </h1>
       </div>
-      <div className="w-full  h-full flex flex-col items-center p-2 gap-3 bg-bgProjetos rounded-lg mt-5">
+      <div className="w-full  h-full flex flex-col items-center p-3 gap-5 bg-bgProjetos rounded-lg mt-5">
         {contacts.map((item) => (
           <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg">
             <a
               href={item.url}
-              className="flex felx-row items-center gap-2 px-5 p-2"
+              className="flex flex-row items-center gap-3 px-5 p-2"
+              target="_blank"
             >
               <span>{item.img}</span>
               <span className="text-lg text-white">{item.name}</span>
