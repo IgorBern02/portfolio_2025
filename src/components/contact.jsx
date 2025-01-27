@@ -76,7 +76,10 @@ const contacts = [
 
 const ModalContact = memo(() => {
   return (
-    <section className="w-full h-auto  p-3 flex flex-col justify-center items-center z-50">
+    <section
+      className="w-full h-auto  p-3 flex flex-col justify-center items-center z-50"
+      id="contato"
+    >
       <div>
         <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
           Contato
@@ -87,11 +90,11 @@ const ModalContact = memo(() => {
           <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg">
             <a
               href={item.url}
-              className="flex flex-row items-center gap-3 px-5 p-2"
+              className="w-full h-full flex flex-row items-center gap-3 px-5 p-2"
               target="_blank"
             >
               <span>{item.img}</span>
-              <span className="text-lg text-white">{item.name}</span>
+              <span className="text-base text-white">{item.name}</span>
             </a>
           </div>
         ))}

@@ -5,8 +5,19 @@ const MenuHamburguer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#sobreMim");
 
-  const handleClick = (link) => {
+  const handleClick = (e, link) => {
+    e.preventDefault(); // Evita o comportamento padrão do link
     setActiveLink(link);
+    scrollToSection(link);
+    setIsOpen(false);
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.querySelector(id);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -68,20 +79,20 @@ const MenuHamburguer = () => {
                 ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
                 : ""
             }`}
-            onClick={() => handleClick("#sobreMim")}
+            onClick={(e) => handleClick(e, "#sobreMim")}
           >
             <li className="w-full h-auto ">Sobre</li>
           </a>
           <a
-            href="#projetos"
+            href="#portfolio"
             className={`w-full h-1/3 py-3 gradientMenu flex items-center ml-5 ${
-              activeLink === "#projetos"
+              activeLink === "#portfolio"
                 ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
                 : ""
             }`}
-            onClick={() => handleClick("#projetos")}
+            onClick={(e) => handleClick(e, "#portfolio")}
           >
-            <li className="w-full h-auto">Projetos</li>
+            <li className="w-full h-auto">Portfolio</li>
           </a>
           <a
             href="#contato"
@@ -90,7 +101,7 @@ const MenuHamburguer = () => {
                 ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
                 : ""
             }`}
-            onClick={() => handleClick("#contato")}
+            onClick={(e) => handleClick(e, "#contato")}
           >
             <li className="w-full h-auto ">Contato</li>
           </a>
@@ -104,6 +115,15 @@ const ModelHeader = memo(() => {
   const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (e, id) => {
+    e.preventDefault(); // Evita o comportamento padrão do link
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(id.substring(1)); // Atualiza a seção ativa
+    }
+  };
+
   const navItems = [
     { href: "#home", label: "Início" },
     { href: "#about", label: "Sobre" },
@@ -111,7 +131,7 @@ const ModelHeader = memo(() => {
   ];
 
   return (
-    <div>
+    <div id="sobreMim">
       <div className="w-screen h-auto fixed top-0 z-30 p-2 backdrop-blur-xl xl:hidden">
         <MenuHamburguer />
       </div>

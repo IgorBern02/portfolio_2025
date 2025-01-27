@@ -19,8 +19,8 @@ const TypingText = ({ text, delay }) => {
 const ModelAboutMe = memo(() => {
   return (
     <div
-      id="sobreMim"
-      className=" w-full gap-10 p-2 flex flex-col items-center justify-around  "
+      className=" w-full gap-10 p-2 flex flex-col items-center justify-around"
+      id="portfolio"
     >
       <div className="w-full h-auto p-4 z-10  md:flex md:flex-col md:items-center md:justify-center">
         <p className="text-lg font-mono font-medium text-white md:text-2xl ">

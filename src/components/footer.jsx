@@ -13,10 +13,7 @@ import React, { memo } from "react";
 
 const ModelFooter = memo(() => {
   return (
-    <div
-      id="contato"
-      className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center"
-    >
+    <div className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center">
       <p className="text-sm">©IgorBernardes</p>
     </div>
   );
