@@ -1,10 +1,10 @@
 import React, { memo, useState } from "react";
 import { motion } from "framer-motion"; // Importando o framer-motion
-import RelogioDigital from "../../images/projetos/relogioDigital.png";
-import Contador from "../../images/projetos/contador.png";
-import LoginValidado from "../../images/projetos/LoginValidado.png";
-import CalculadoraImc from "../../images/projetos/Calculadoraimc.png";
-import SistemaBanco from "../../images/projetos/sistemaBanco.png";
+import RelogioDigital from "../images/projetos/relogioDigital.png";
+import Contador from "../images/projetos/contador.png";
+import LoginValidado from "../images/projetos/LoginValidado.png";
+import CalculadoraImc from "../images/projetos/Calculadoraimc.png";
+import SistemaBanco from "../images/projetos/sistemaBanco.png";
 
 const arrayprojects = [
   {
@@ -53,7 +53,7 @@ const ModalProjects = memo(({ projects }) => {
   };
 
   return (
-    <section className="grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10  md:grid-cols-2">
+    <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10  md:grid-cols-2">
       {projects.slice(0, showMore ? projects.length : 3).map((proj) => (
         <motion.div
           className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3  md:relative md:h-[450px]"

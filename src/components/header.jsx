@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react";
-import "./navbar.css";
+import "../index.css";
 
 const MenuHamburguer = () => {
   const [isOpen, setIsOpen] = useState(false);

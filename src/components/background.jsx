@@ -1,4 +1,4 @@
-import "./Ball.css";
+import "../index.css";
 
 function background() {
   return (

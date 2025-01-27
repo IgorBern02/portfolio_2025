@@ -1,4 +1,3 @@
-// import TypingText from "./typingText";
 import React, { memo, useState, useEffect } from "react";
 
 const TypingText = ({ text, delay }) => {

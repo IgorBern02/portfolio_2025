@@ -1,4 +1,4 @@
-import Wpp from "../../images/footer/wpp.png";
+import Wpp from "../images/footer/wpp.png";
 
 function footer() {
   return (

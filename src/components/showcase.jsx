@@ -1,7 +1,7 @@
 import React, { useState, memo } from "react";
-import Projetos from "../projects/projetos";
-import Skills from "../skills/skills";
-import "./style.css";
+import Projetos from "./projetos";
+import Skills from "./skills";
+import "../index.css";
 
 const NavbBar_showcase = memo(() => {
   const [active, setActive] = useState("projetos"); // Inicialmente setado para projetos
@@ -14,7 +14,7 @@ const NavbBar_showcase = memo(() => {
 
   return (
     <nav className="w-full h-auto p-2">
-      <ul className="flex items-center justify-around gap-2 text-center w-full h-full rounded-lg bg-bgProjetos py-2 px-3">
+      <ul className=" flex items-center justify-around gap-2 text-center w-full h-full rounded-lg bg-bgProjetos py-2 px-3">
         <li
           className={`flex flex-col items-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl ${
             active === "projetos"
@@ -75,9 +75,9 @@ const NavbBar_showcase = memo(() => {
         </li>
       </ul>
 
-      <div className="relative w-full bg-red-400">
+      <div className=" w-full h-full relative">
         {active === "projetos" && (
-          <div className="content active">
+          <div className="content active ">
             <Projetos />
           </div>
         )}

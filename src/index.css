@@ -7,3 +7,49 @@
   font-family: "Poppins", serif;
   background: #030014;
 }
+
+/* BACKGROUND */
+.animate-bounce {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-100px) scale(0.7);
+  }
+  50% {
+    transform: translateY(0) scale(1.2);
+  }
+  100% {
+    transform: translateY(-100px) scale(0.7);
+  }
+}
+
+/* MENU HAMBURGUER */
+.menu {
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 100%;
+  height: 25vh;
+  /* background-color: #333; */
+  transition: all 0.5s ease-in-out;
+}
+
+.menu.open {
+  right: 0;
+}
+
+/* SHOWCASE */
+.content {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  /* position: absolute; Para sobrepor os componentes */
+}
+
+.content.active {
+  opacity: 1;
+}
