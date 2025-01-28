@@ -116,9 +116,48 @@ const ModalProjects = memo(({ projects }) => {
       ))}
       <button
         onClick={handleShowMore}
-        className="flex flex-col items-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer"
+        className="flex flex-row items-center justify-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer"
       >
         {showMore ? "Ver Menos" : "Ver Mais"}
+        {showMore ? (
+          // Seta para cima ao lado de "Ver Menos"
+          <svg
+            className="w-6 h-6 text-white ml-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m5 15 7-7 7 7"
+            />
+          </svg>
+        ) : (
+          <svg
+            className="w-6 h-6 text-white ml-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7"
+            />
+          </svg>
+          // Seta para baixo ao lado de "Ver Mais"
+        )}
       </button>
     </section>
   );
