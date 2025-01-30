@@ -8,6 +8,13 @@ import SistemaBanco from "../images/projetos/sistemaBanco.png";
 
 const arrayprojects = [
   {
+    img: CalculadoraImc,
+    name: "Calculadora IMC",
+    desc: "Uma calculadora básica de IMC",
+    github: "https://github.com/IgorBern02/Calculadora-IMC",
+    site: "https://igucalculadoraimc.netlify.app/",
+  },
+  {
     img: RelogioDigital,
     name: "Relógio Digital",
     desc: "Projeto com a ideia de fazer um Relógio Digital com hora e data ao vivo, feito com Html,Css(Sass),Js.",
@@ -28,13 +35,6 @@ const arrayprojects = [
     desc: "Login com validação feito com fire base.",
     github: "https://github.com/IgorBern02/Login_Validado",
     site: "https://igorbern02.github.io/Login_Validado/",
-  },
-  {
-    img: CalculadoraImc,
-    name: "Calculadora IMC",
-    desc: "Uma calculadora básica de IMC",
-    github: "https://github.com/IgorBern02/Calculadora-IMC",
-    site: "https://igucalculadoraimc.netlify.app/",
   },
   {
     img: SistemaBanco,
@@ -164,9 +164,7 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
   );
 });
 
-const Projects = () => {
-  const [ballCount, setBallCount] = useState(5); // Estado para a contagem de bolas
-
+const Projects = ({ setBallCount }) => {
   return (
     <section className="w-full h-auto gap-10 p-2 flex flex-col z-50">
       <ModalProjects projects={arrayprojects} setBallCount={setBallCount} />

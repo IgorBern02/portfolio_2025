@@ -21,7 +21,7 @@ const Background = ({ ballCount }) => {
   const balls = Array.from({ length: ballCount }, (_, index) => (
     <div
       key={index}
-      className={`w-80 h-80 rounded-full bg-purple-500 mt-32 ml-10 bg-opacity-50 `}
+      className={`w-80 h-80 rounded-full bg-purple-500 mt-28 ml-10 bg-opacity-50 blur-[110px] animate-bounce`}
     />
   ));
 

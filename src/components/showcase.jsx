@@ -184,7 +184,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
       <div className="w-full h-full relative">
         {active === "projetos" && (
           <div className="content active">
-            <Projetos />
+            <Projetos setBallCount={setBallCount} />
           </div>
         )}
         {active === "tecnologias" && (
