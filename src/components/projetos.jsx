@@ -45,11 +45,12 @@ const arrayprojects = [
   },
 ];
 
-const ModalProjects = memo(({ projects }) => {
+const ModalProjects = memo(({ projects, setBallCount }) => {
   const [showMore, setShowMore] = useState(false);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
+    setBallCount(showMore ? 5 : 7);
   };
 
   return (
@@ -164,9 +165,11 @@ const ModalProjects = memo(({ projects }) => {
 });
 
 const Projects = () => {
+  const [ballCount, setBallCount] = useState(5); // Estado para a contagem de bolas
+
   return (
     <section className="w-full h-auto gap-10 p-2 flex flex-col z-50">
-      <ModalProjects projects={arrayprojects} />
+      <ModalProjects projects={arrayprojects} setBallCount={setBallCount} />
     </section>
   );
 };
