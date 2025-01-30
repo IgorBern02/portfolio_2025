@@ -8,7 +8,7 @@ const contacts = [
     url: `https://api.whatsapp.com/send?phone=${numberWpp}`,
     img: (
       <svg
-        class="w-8 h-8 text-white"
+        class="w-8 h-8 text-white md:w-10 md:h-10"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -34,7 +34,7 @@ const contacts = [
     url: "https://github.com/IgorBern02",
     img: (
       <svg
-        class="w-8 h-8 text-white"
+        class="w-8 h-8 text-white md:w-10 md:h-10"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -55,7 +55,7 @@ const contacts = [
     url: "https://youtube.com",
     img: (
       <svg
-        class="w-8 h-8 text-white"
+        class="w-8 h-8 text-white md:w-10 md:h-10"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -81,20 +81,22 @@ const ModalContact = memo(() => {
       id="contato"
     >
       <div>
-        <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent md:text-5xl">
           Contato
         </h1>
       </div>
-      <div className="w-full  h-full flex flex-col items-center p-3 gap-5 bg-bgProjetos rounded-lg mt-5">
+      <div className="w-full  h-full flex flex-col items-center p-3 gap-5 bg-bgProjetos rounded-lg mt-5 md:bg-transparent">
         {contacts.map((item) => (
-          <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg">
+          <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg md:w-2/4">
             <a
               href={item.url}
-              className="w-full h-full flex flex-row items-center gap-3 px-5 p-2"
+              className="w-full h-full flex flex-row items-center gap-3 px-5 p-2 md:p-4"
               target="_blank"
             >
-              <span>{item.img}</span>
-              <span className="text-base text-white">{item.name}</span>
+              <span className="text-3xl">{item.img}</span>
+              <span className="text-base text-white md:text-xl">
+                {item.name}
+              </span>
             </a>
           </div>
         ))}

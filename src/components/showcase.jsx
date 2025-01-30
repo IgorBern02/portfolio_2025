@@ -131,10 +131,10 @@ const Navbar_showcase = memo(({ setBallCount }) => {
           }`}
           onClick={(event) => handleClick("projetos", event)}
         >
-          <a href="#" className="flex flex-col items-center">
+          <a href="#" className="flex flex-col items-center md:text-2xl">
             <span>
               <svg
-                className="w-6 h-6 text-white"
+                className="w-6 h-6 text-white md:w-8 md:h-8"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -162,10 +162,10 @@ const Navbar_showcase = memo(({ setBallCount }) => {
           }`}
           onClick={(event) => handleClick("tecnologias", event)}
         >
-          <a href="#" className="flex flex-col items-center">
+          <a href="#" className="flex flex-col items-center md:text-2xl">
             <span>
               <svg
-                className="w-6 h-6 text-white"
+                className="w-6 h-6 text-white md:w-8 md:h-8"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

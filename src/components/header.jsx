@@ -21,7 +21,7 @@ const MenuHamburguer = () => {
   };
 
   return (
-    <nav className="w-full h-14  flex flex-row items-center justify-end">
+    <nav className="w-full h-14 z-90 flex flex-row items-center justify-end">
       <h2 className="absolute left-5 text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
         Igu
       </h2>
@@ -33,7 +33,7 @@ const MenuHamburguer = () => {
           <div className="text-gray-300 hover:text-white z-10">
             {isOpen ? (
               <svg
-                className="w-10 h-10 text-white dark:text-white md:w-16 md:h-16"
+                className="w-10 h-10 text-white dark:text-white md:w-12 md:h-12"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -51,7 +51,7 @@ const MenuHamburguer = () => {
               </svg>
             ) : (
               <svg
-                className="w-10 h-10 text-white dark:text-white md:w-16 md:h-16"
+                className="w-10 h-10 text-white dark:text-white md:w-12 md:h-12"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -71,7 +71,7 @@ const MenuHamburguer = () => {
         </button>
       </div>
       <div className={`menu ${isOpen ? "open" : ""}  flex flex-col `}>
-        <ul className="text-xl text-white flex flex-col gap-5 h-auto w-full md:text-3xl bg-[#030014]">
+        <ul className="text-xl text-white flex flex-col gap-5 h-auto w-full md:text-2xl bg-[#030014]">
           <a
             href="#sobreMim"
             className={`w-full h-1/3 py-3 gradientMenu flex items-center ml-5 ${
@@ -81,7 +81,7 @@ const MenuHamburguer = () => {
             }`}
             onClick={(e) => handleClick(e, "#sobreMim")}
           >
-            <li className="w-full h-auto ">Sobre</li>
+            <li className="w-full h-auto">Sobre</li>
           </a>
           <a
             href="#portfolio"

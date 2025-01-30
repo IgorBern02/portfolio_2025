@@ -22,11 +22,11 @@ const ModelAboutMe = memo(() => {
       className=" w-full gap-10 p-2 flex flex-col items-center justify-around"
       id="portfolio"
     >
-      <div className="w-full h-auto p-4 z-10  md:flex md:flex-col md:items-center md:justify-center">
-        <p className="text-lg font-mono font-medium text-white md:text-2xl ">
+      <div className="w-full h-auto p-4 z-10 md:flex md:flex-col md:items-center md:text-left ">
+        <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64">
           Igor Bernardes
         </p>
-        <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+        <h1 className="text-6xl xl:text-7xl font-bold tracking-tight">
           <span className="relative inline-block">
             <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
 
@@ -49,7 +49,7 @@ const ModelAboutMe = memo(() => {
             <button className="group relative p-1">
               <svg
                 svg
-                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors"
+                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -72,7 +72,7 @@ const ModelAboutMe = memo(() => {
           <a href="" target="_blank" rel="noopener noreferrer">
             <button className="group relative p-1">
               <svg
-                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors"
+                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

@@ -54,7 +54,7 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
   };
 
   return (
-    <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10  md:grid-cols-2">
+    <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2">
       {projects.slice(0, showMore ? projects.length : 3).map((proj) => (
         <motion.div
           className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3  md:relative md:h-[450px]"
@@ -72,11 +72,11 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             </h1>
             <p className="font-mono text-base md:text-xl">{proj.desc}</p>
           </section>
-          <section className="flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 w-full">
+          <section className="flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4 w-full">
             <a href={proj.github} target="_blank">
               <button type="button">
                 <svg
-                  class="w-10 h-10 text-white dark:text-white"
+                  class="w-10 h-10 text-white md:w-12 md:h-12"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
