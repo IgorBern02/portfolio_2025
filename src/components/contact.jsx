@@ -85,16 +85,16 @@ const ModalContact = memo(() => {
           Contato
         </h1>
       </div>
-      <div className="w-full  h-full flex flex-col items-center p-3 gap-5 bg-bgProjetos rounded-lg mt-5 md:bg-transparent">
+      <div className="w-full  h-full flex flex-col items-center p-3 gap-5 bg-bgProjetos rounded-lg mt-5  md:bg-transparent">
         {contacts.map((item) => (
-          <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg md:w-2/4">
+          <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg backdrop-blur-xl cursor-pointer md:w-2/4">
             <a
               href={item.url}
               className="w-full h-full flex flex-row items-center gap-3 px-5 p-2 md:p-4"
               target="_blank"
             >
               <span className="text-3xl">{item.img}</span>
-              <span className="text-base text-white md:text-xl">
+              <span className="text-base text-white md:text-lg">
                 {item.name}
               </span>
             </a>

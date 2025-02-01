@@ -71,7 +71,7 @@ const MenuHamburguer = () => {
         </button>
       </div>
       <div className={`menu ${isOpen ? "open" : ""}  flex flex-col `}>
-        <ul className="text-xl text-white flex flex-col gap-5 h-auto w-full md:text-2xl bg-[#030014]">
+        <ul className="text-xl text-white flex flex-col gap-5 h-auto w-full bg-[#030014]">
           <a
             href="#sobreMim"
             className={`w-full h-1/3 py-3 gradientMenu flex items-center ml-5 ${
@@ -125,9 +125,9 @@ const ModelHeader = memo(() => {
   };
 
   const navItems = [
-    { href: "#home", label: "Início" },
-    { href: "#about", label: "Sobre" },
-    { href: "#contact", label: "Contato" },
+    { href: "#sobreMim", label: "Sobre" },
+    { href: "#portfolio", label: "Portfolio" },
+    { href: "#contato", label: "Contato" },
   ];
 
   return (
@@ -146,7 +146,7 @@ const ModelHeader = memo(() => {
               key={item.label}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
-              className="group relative px-1 py-2 text-xl xl:text-2xl max-2xl:text-base font-medium"
+              className="group relative px-1 py-2 text-xl font-medium"
             >
               <span
                 className={`relative z-10 transition-colors duration-300 ${

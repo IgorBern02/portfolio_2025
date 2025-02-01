@@ -23,10 +23,10 @@ const ModelAboutMe = memo(() => {
       id="portfolio"
     >
       <div className="w-full h-auto p-4 z-10 md:flex md:flex-col md:items-center md:text-left ">
-        <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64">
+        <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64 lg:mr-[340px]">
           Igor Bernardes
         </p>
-        <h1 className="text-6xl xl:text-7xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
           <span className="relative inline-block">
             <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
 

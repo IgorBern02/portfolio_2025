@@ -101,7 +101,7 @@
 
 // export default memo(Showcase);
 
-import React, { useState, memo } from "react";
+import React, { useState, useEffect, memo } from "react";
 import Projetos from "./projetos";
 import Skills from "./skills";
 import "../index.css";
@@ -131,7 +131,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
           }`}
           onClick={(event) => handleClick("projetos", event)}
         >
-          <a href="#" className="flex flex-col items-center md:text-2xl">
+          <a href="#" className="flex flex-col items-center text-xl ">
             <span>
               <svg
                 className="w-6 h-6 text-white md:w-8 md:h-8"
@@ -162,7 +162,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
           }`}
           onClick={(event) => handleClick("tecnologias", event)}
         >
-          <a href="#" className="flex flex-col items-center md:text-2xl">
+          <a href="#" className="flex flex-col items-center text-xl">
             <span>
               <svg
                 className="w-6 h-6 text-white md:w-8 md:h-8"

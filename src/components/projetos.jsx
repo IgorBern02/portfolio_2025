@@ -24,7 +24,7 @@ const arrayprojects = [
   {
     img: Contador,
     name: "Contador",
-    desc: "Contador simples com html, css e java script.",
+    desc: "Contador simples com html, css e javascript.",
     github: "https://github.com/IgorBern02/Contador",
     site: "https://igucontador.netlify.app/",
   },
@@ -32,7 +32,7 @@ const arrayprojects = [
   {
     img: LoginValidado,
     name: "Login Validação",
-    desc: "Login com validação feito com fire base.",
+    desc: "Login com validação feito com firebase.",
     github: "https://github.com/IgorBern02/Login_Validado",
     site: "https://igorbern02.github.io/Login_Validado/",
   },
@@ -54,25 +54,29 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
   };
 
   return (
-    <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2">
-      {projects.slice(0, showMore ? projects.length : 3).map((proj) => (
+    <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2 lg:grid-cols-3 ">
+      {projects.slice(0, showMore ? projects.length : 3).map((proj, index) => (
         <motion.div
-          className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3  md:relative md:h-[450px]"
-          whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na visualização
-          initial={{ opacity: 0, y: 30 }} // Inicialmente invisível e abaixo
+          // whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na visualização
+          // initial={{ opacity: 0, y: 30 }} // Inicialmente invisível e abaixo
+          // transition={{ duration: 0.8 }} // Duração da animação]]
+          className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3 md:relative md:h-[450px] lg:h-[500px] cursor-pointer hover:scale-110"
+          initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação inicial
+          animate={{ opacity: 1, x: 0 }} // Animação ao entrar
+          exit={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação ao sair
           transition={{ duration: 0.8 }} // Duração da animação
           key={proj.name}
         >
-          <div className="w-full h-44 bg-violet-600 flex flex-row rounded md:h-48">
-            <img src={proj.img} alt={proj.name} />
+          <div className="w-full h-44 flex flex-row rounded md:h-48 lg:h-52">
+            <img src={proj.img} alt={proj.name} className="w-full" />
           </div>
-          <section className="w-full text-wrap flex flex-col gap-3">
+          <section className="w-full text-wrap flex flex-col gap-3 p-2">
             <h1 className="font-semibold text-xl font-mono md:text-2xl">
               {proj.name}
             </h1>
             <p className="font-mono text-base md:text-xl">{proj.desc}</p>
           </section>
-          <section className="flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4 w-full">
+          <section className="w-full flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4">
             <a href={proj.github} target="_blank">
               <button type="button">
                 <svg
@@ -115,51 +119,53 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
           </section>
         </motion.div>
       ))}
-      <button
-        onClick={handleShowMore}
-        className="flex flex-row items-center justify-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer"
-      >
-        {showMore ? "Ver Menos" : "Ver Mais"}
-        {showMore ? (
-          // Seta para cima ao lado de "Ver Menos"
-          <svg
-            className="w-6 h-6 text-white ml-4"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m5 15 7-7 7 7"
-            />
-          </svg>
-        ) : (
-          <svg
-            className="w-6 h-6 text-white ml-4"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m19 9-7 7-7-7"
-            />
-          </svg>
-          // Seta para baixo ao lado de "Ver Mais"
-        )}
-      </button>
+      <div className="col-span-full flex justify-center mt-4">
+        <button
+          onClick={handleShowMore}
+          className="flex flex-row items-center justify-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer md:text-xl md:py-4"
+        >
+          {showMore ? "Ver Menos" : "Ver Mais"}
+          {showMore ? (
+            // Seta para cima ao lado de "Ver Menos"
+            <svg
+              className="w-6 h-6 text-white ml-4 md:w-8"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m5 15 7-7 7 7"
+              />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 text-white ml-4"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 9-7 7-7-7"
+              />
+            </svg>
+            // Seta para baixo ao lado de "Ver Mais"
+          )}
+        </button>
+      </div>
     </section>
   );
 });
