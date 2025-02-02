@@ -23,10 +23,10 @@ const ModelAboutMe = memo(() => {
       id="portfolio"
     >
       <div className="w-full h-auto p-4 z-10 md:flex md:flex-col md:items-center md:text-left ">
-        <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64 lg:mr-[340px]">
+        <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64 lg:mr-[340px] xl:text-xl xl:mr-[285px]">
           Igor Bernardes
         </p>
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-6xl font-bold tracking-tight">
           <span className="relative inline-block">
             <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
 
@@ -43,13 +43,17 @@ const ModelAboutMe = memo(() => {
           </span>
         </h1>
       </div>
-      <div className="w-full h-auto  flex flex-row items-center justify-start p-2 gap-4 ">
-        <div className="border flex items-center p-1 rounded-lg  border-white/10">
-          <a href="" target="_blank" rel="noopener noreferrer">
+      <div className="w-full h-auto  flex flex-row items-center justify-start p-2 gap-4">
+        <div className="border flex items-center p-1 rounded-lg border-white/10">
+          <a
+            href="https://www.instagram.com/ft.iguu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="group relative p-1">
               <svg
                 svg
-                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12"
+                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12 xl:w-10 xl:h-10"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -69,10 +73,14 @@ const ModelAboutMe = memo(() => {
         </div>
 
         <div className="border flex items-center p-1 rounded-lg  border-white/10">
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/igor-bernardes-05aa05204/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="group relative p-1">
               <svg
-                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12"
+                class="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12 xl:w-10 xl:h-10"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

@@ -41,7 +41,7 @@ function App() {
   const [ballCount, setBallCount] = useState(5);
 
   return (
-    <section className="relative h-auto">
+    <section className="relative h-auto w-full overflow-x-hidden">
       <Background ballCount={ballCount} />
       <section className="gap-10 flex flex-col z-10 relative">
         <Header />

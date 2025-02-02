@@ -57,30 +57,32 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
     <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2 lg:grid-cols-3 ">
       {projects.slice(0, showMore ? projects.length : 3).map((proj, index) => (
         <motion.div
-          // whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na visualização
-          // initial={{ opacity: 0, y: 30 }} // Inicialmente invisível e abaixo
-          // transition={{ duration: 0.8 }} // Duração da animação]]
-          className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3 md:relative md:h-[450px] lg:h-[500px] cursor-pointer hover:scale-110"
-          initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação inicial
-          animate={{ opacity: 1, x: 0 }} // Animação ao entrar
-          exit={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação ao sair
-          transition={{ duration: 0.8 }} // Duração da animação
+          whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na visualização
+          initial={{ opacity: 0, y: 30 }} // Inicialmente invisível e abaixo
+          transition={{ duration: 0.8 }} // Duração da animação]]
+          className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3 cursor-pointer md:relative md:h-[450px] lg:h-[500px] xl:h-[460px] hover:scale-110"
+          // initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação inicial
+          // animate={{ opacity: 1, x: 0 }} // Animação ao entrar
+          // exit={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação ao sair
+          // transition={{ duration: 0.8 }} // Duração da animação
           key={proj.name}
         >
-          <div className="w-full h-44 flex flex-row rounded md:h-48 lg:h-52">
+          <div className="w-full h-44 flex flex-row rounded md:h-48 lg:h-52 xl:h-44">
             <img src={proj.img} alt={proj.name} className="w-full" />
           </div>
           <section className="w-full text-wrap flex flex-col gap-3 p-2">
-            <h1 className="font-semibold text-xl font-mono md:text-2xl">
+            <h1 className="font-semibold text-xl font-mono md:text-2xl xl:text-lg">
               {proj.name}
             </h1>
-            <p className="font-mono text-base md:text-xl">{proj.desc}</p>
+            <p className="font-mono text-base md:text-xl xl:text-base">
+              {proj.desc}
+            </p>
           </section>
           <section className="w-full flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4">
             <a href={proj.github} target="_blank">
               <button type="button">
                 <svg
-                  class="w-10 h-10 text-white md:w-12 md:h-12"
+                  class="w-10 h-10 text-white md:w-12 md:h-12 xl:w-9 xl:h-9"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -99,7 +101,7 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             <a href={proj.site} target="_blank">
               <button type="button">
                 <svg
-                  class="w-10 h-10 text-white"
+                  class="w-10 h-10 text-white xl:w-9 xl:h-9"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -122,13 +124,13 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
       <div className="col-span-full flex justify-center mt-4">
         <button
           onClick={handleShowMore}
-          className="flex flex-row items-center justify-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer md:text-xl md:py-4"
+          className="flex flex-row items-center justify-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer md:text-xl md:py-4 xl:text-base hover:border-white hover:duration-300"
         >
           {showMore ? "Ver Menos" : "Ver Mais"}
           {showMore ? (
             // Seta para cima ao lado de "Ver Menos"
             <svg
-              className="w-6 h-6 text-white ml-4 md:w-8"
+              className="w-6 h-6 text-white ml-4 md:w-8 xl:w-5 xl:h-5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -146,7 +148,7 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             </svg>
           ) : (
             <svg
-              className="w-6 h-6 text-white ml-4"
+              className="w-6 h-6 text-white ml-4 xl:w-5 xl:h-5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"

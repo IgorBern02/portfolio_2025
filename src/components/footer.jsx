@@ -13,8 +13,8 @@ import React, { memo } from "react";
 
 const ModelFooter = memo(() => {
   return (
-    <div className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center">
-      <p className="text-sm md:text-lg">©IgorBernardes</p>
+    <div className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center xl:py-3">
+      <p className="text-sm md:text-lg xl:text-sm">©IgorBernardes</p>
     </div>
   );
 });

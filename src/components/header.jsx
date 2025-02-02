@@ -137,7 +137,7 @@ const ModelHeader = memo(() => {
       </div>
 
       <div className="hidden xl:flex justify-between items-center fixed top-0 z-30 p-2 backdrop-blur-xl  w-full">
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent xl:text-base">
           Igu
         </h2>
         <nav className="ml-8 flex items-center space-x-8">
@@ -146,7 +146,7 @@ const ModelHeader = memo(() => {
               key={item.label}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
-              className="group relative px-1 py-2 text-xl font-medium"
+              className="group relative px-1 py-2 text-xl font-medium xl:text-base"
             >
               <span
                 className={`relative z-10 transition-colors duration-300 ${

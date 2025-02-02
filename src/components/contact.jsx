@@ -1,14 +1,16 @@
 import React, { memo } from "react";
+import { motion } from "framer-motion"; // Importando o framer-motion
 
 const numberWpp = "5513991246604";
 
 const contacts = [
+  // WPP
   {
     name: "Whatsapp",
     url: `https://api.whatsapp.com/send?phone=${numberWpp}`,
     img: (
       <svg
-        class="w-8 h-8 text-white md:w-10 md:h-10"
+        class="w-8 h-8 text-white md:w-10 md:h-10 xl:w-8 xl:g-8"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -29,12 +31,13 @@ const contacts = [
       </svg>
     ),
   },
+  // GITHUB
   {
     name: "GitHub",
     url: "https://github.com/IgorBern02",
     img: (
       <svg
-        class="w-8 h-8 text-white md:w-10 md:h-10"
+        class="w-8 h-8 text-white md:w-10 md:h-10 xl:w-8 xl:g-8"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -50,12 +53,13 @@ const contacts = [
       </svg>
     ),
   },
+  // LINKEDIN
   {
     name: "LinkedIn",
-    url: "https://youtube.com",
+    url: "https://www.linkedin.com/in/igor-bernardes-05aa05204/",
     img: (
       <svg
-        class="w-8 h-8 text-white md:w-10 md:h-10"
+        class="w-8 h-8 text-white md:w-10 md:h-10 xl:w-8 xl:g-8"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -81,24 +85,29 @@ const ModalContact = memo(() => {
       id="contato"
     >
       <div>
-        <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent md:text-5xl">
+        <h1 className="text-4xl font-bold  text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent md:text-5xl xl:text-4xl">
           Contato
         </h1>
       </div>
-      <div className="w-full  h-full flex flex-col items-center p-3 gap-5 bg-bgProjetos rounded-lg mt-5  md:bg-transparent">
+      <div className="w-full  h-full flex flex-col items-center p-3 gap-5  rounded-lg mt-5 md:bg-transparent">
         {contacts.map((item) => (
-          <div className="w-3/4 h-auto flex flex-row items-center border border-white/50 rounded-lg backdrop-blur-xl cursor-pointer md:w-2/4">
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na visualização
+            initial={{ opacity: 0, y: 30 }} // Inicialmente invisível e abaixo
+            transition={{ duration: 0.8 }} // Duração da animação]]
+            className="w-3/4 h-auto flex flex-row items-center border border-white/20 rounded-lg backdrop-blur-xl cursor-pointer md:w-2/4 xl:w-2/5  hover:border-white hover:duration-300 "
+          >
             <a
               href={item.url}
-              className="w-full h-full flex flex-row items-center gap-3 px-5 p-2 md:p-4"
+              className="w-full h-full flex flex-row items-center gap-3 px-5 p-2 md:p-4 xl:p-2"
               target="_blank"
             >
               <span className="text-3xl">{item.img}</span>
-              <span className="text-base text-white md:text-lg">
+              <span className="text-base text-white md:text-lg xl:text-sm">
                 {item.name}
               </span>
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
