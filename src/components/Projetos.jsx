@@ -10,7 +10,7 @@ const arrayprojects = [
   {
     img: Appapifilmes,
     name: "API de Filmes",
-    desc: "Uma pagina que consome uma API de filmes, onde podemos ver diversos filmes e fazer pesquisa pelo nome deles.",
+    desc: "Uma pagina que consome uma API de filmes, onde podemos ver a descrição de diversos filmes e fazer pesquisa pelo nome deles.",
     github: "https://github.com/IgorBern02/app-api-filmes",
     site: "https://igorbern02.github.io/app-api-filmes/",
   },
