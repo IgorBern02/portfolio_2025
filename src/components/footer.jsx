@@ -1,26 +1,15 @@
 import React, { memo } from "react";
 
-// function footer() {
-//   return (
-//     <div
-//       id="contato"
-//       className="bg-bgProjetos gap-3 text-white w-full h-auto p-3 relative top-7 flex flex-col items-center justify-center"
-//     >
-//       <p className="md:text-xl">©IgorBernardes</p>
-//     </div>
-//   );
-// }
-
 const ModelFooter = memo(() => {
   return (
-    <div className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center xl:py-3">
-      <p className="text-sm md:text-lg xl:text-sm">©IgorBernardes</p>
-    </div>
+    <footer className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center xl:py-3">
+      <p className="text-sm md:text-base xl:text-sm">
+        © {new Date().getFullYear()} Igor Bernardes
+      </p>
+    </footer>
   );
 });
 
-const Footer = () => {
-  return <ModelFooter />;
-};
+const Footer = () => <ModelFooter />;
 
 export default memo(Footer);

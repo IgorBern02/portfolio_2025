@@ -2,11 +2,19 @@ import React, { memo, useState } from "react";
 import { motion } from "framer-motion"; // Importando o framer-motion
 import RelogioDigital from "../images/projetos/relogioDigital.png";
 import Contador from "../images/projetos/contador.png";
-import LoginValidado from "../images/projetos/LoginValidado.png";
-import CalculadoraImc from "../images/projetos/Calculadoraimc.png";
+import Appapifilmes from "../images/projetos/appapifilmes.png";
+import LoginValidado from "../images/projetos/loginValidado.png";
+import CalculadoraImc from "../images/projetos/calculadoraimc.png";
 import SistemaBanco from "../images/projetos/sistemaBanco.png";
 
 const arrayprojects = [
+  {
+    img: Appapifilmes,
+    name: "API de Filmes",
+    desc: "Uma pagina que consome uma API de filmes, onde podemos ver diversos filmes e fazer pesquisa pelo nome deles.",
+    github: "https://github.com/IgorBern02/app-api-filmes",
+    site: "https://igorbern02.github.io/app-api-filmes/",
+  },
   {
     img: CalculadoraImc,
     name: "Calculadora IMC",
@@ -21,13 +29,6 @@ const arrayprojects = [
     github: "https://github.com/IgorBern02/digital-clock",
     site: "https://igorbern02.github.io/digital-clock/",
   },
-  {
-    img: Contador,
-    name: "Contador",
-    desc: "Contador simples com html, css e javascript.",
-    github: "https://github.com/IgorBern02/Contador",
-    site: "https://igucontador.netlify.app/",
-  },
 
   {
     img: LoginValidado,
@@ -39,7 +40,7 @@ const arrayprojects = [
   {
     img: SistemaBanco,
     name: "Sistema Banco",
-    desc: "Um sistema de banco padrão, onde mostra o saldo da conta e atráves dele podemos simular saques e depósitos.",
+    desc: "Um sistema de banco padrão, onde mostra o saldo da conta e através dele podemos simular saques e depósitos.",
     github: "https://github.com/IgorBern02/Sistema-Banco",
     site: "https://igorbern02.github.io/Sistema-Banco/",
   },
@@ -54,21 +55,21 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
   };
 
   return (
-    <section className=" grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2 lg:grid-cols-3 ">
+    <section className="grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2 lg:grid-cols-3">
       {projects.slice(0, showMore ? projects.length : 3).map((proj, index) => (
         <motion.div
-          whileInView={{ opacity: 1, y: 0 }} // Animação ao entrar na visualização
-          initial={{ opacity: 0, y: 30 }} // Inicialmente invisível e abaixo
-          transition={{ duration: 0.8 }} // Duração da animação]]
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
           className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3 cursor-pointer md:relative md:h-[450px] lg:h-[500px] xl:h-[460px] hover:scale-110"
-          // initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação inicial
-          // animate={{ opacity: 1, x: 0 }} // Animação ao entrar
-          // exit={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }} // Animação ao sair
-          // transition={{ duration: 0.8 }} // Duração da animação
           key={proj.name}
         >
           <div className="w-full h-44 flex flex-row rounded md:h-48 lg:h-52 xl:h-44">
-            <img src={proj.img} alt={proj.name} className="w-full" />
+            <img
+              src={proj.img}
+              alt={proj.name}
+              className="w-full object-cover rounded"
+            />
           </div>
           <section className="w-full text-wrap flex flex-col gap-3 p-2">
             <h1 className="font-semibold text-xl font-mono md:text-2xl xl:text-lg">
@@ -79,11 +80,15 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             </p>
           </section>
           <section className="w-full flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4">
-            <a href={proj.github} target="_blank">
-              <button type="button">
+            <a
+              href={proj.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${proj.name} GitHub`}
+            >
+              <button type="button" aria-hidden="true">
                 <svg
-                  class="w-10 h-10 text-white md:w-12 md:h-12 xl:w-9 xl:h-9"
-                  aria-hidden="true"
+                  className="w-10 h-10 text-white md:w-12 md:h-12 xl:w-9 xl:h-9"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -91,18 +96,22 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </button>
             </a>
-            <a href={proj.site} target="_blank">
-              <button type="button">
+            <a
+              href={proj.site}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${proj.name} Site`}
+            >
+              <button type="button" aria-hidden="true">
                 <svg
-                  class="w-10 h-10 text-white xl:w-9 xl:h-9"
-                  aria-hidden="true"
+                  className="w-10 h-10 text-white xl:w-9 xl:h-9"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="18"
@@ -111,8 +120,8 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeWidth="2"
                     d="M1 7h18M4 4h.01M7 4h.01M10 4h.01M3 17h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"
                   />
                 </svg>
@@ -131,7 +140,6 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             // Seta para cima ao lado de "Ver Menos"
             <svg
               className="w-6 h-6 text-white ml-4 md:w-8 xl:w-5 xl:h-5"
-              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -140,16 +148,16 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="m5 15 7-7 7 7"
               />
             </svg>
           ) : (
+            // Seta para baixo ao lado de "Ver Mais"
             <svg
               className="w-6 h-6 text-white ml-4 xl:w-5 xl:h-5"
-              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -158,13 +166,12 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="m19 9-7 7-7-7"
               />
             </svg>
-            // Seta para baixo ao lado de "Ver Mais"
           )}
         </button>
       </div>

@@ -29,13 +29,14 @@
 // export default App;
 
 import "./App.css";
-import React, { useState } from "react";
-import Header from "./components/header";
-import AboutMe from "./components/about";
-import Footer from "./components/footer";
-import Background from "./components/background";
-import Showcase from "./components/showcase";
-import Contact from "./components/contact";
+import React from "react";
+import { useState } from "react";
+import Header from "./components/Header";
+import AboutMe from "./components/About";
+import Footer from "./components/Footer";
+import Background from "./components/Background";
+import Showcase from "./components/Showcase";
+import Contact from "./components/Contact";
 
 function App() {
   const [ballCount, setBallCount] = useState(5);

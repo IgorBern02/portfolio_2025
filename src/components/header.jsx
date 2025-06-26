@@ -1,12 +1,8 @@
 import React, { memo, useState } from "react";
-import "../index.css";
 
-const MenuHamburguer = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("#sobreMim");
-
+const MenuHamburguer = ({ activeLink, setActiveLink, setIsOpen, isOpen }) => {
   const handleClick = (e, link) => {
-    e.preventDefault(); // Evita o comportamento padrão do link
+    e.preventDefault();
     setActiveLink(link);
     scrollToSection(link);
     setIsOpen(false);
@@ -14,11 +10,16 @@ const MenuHamburguer = () => {
 
   const scrollToSection = (id) => {
     const element = document.querySelector(id);
-
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const navItems = [
+    { href: "#sobreMim", label: "Sobre" },
+    { href: "#portfolio", label: "Portfolio" },
+    { href: "#contato", label: "Contato" },
+  ];
 
   return (
     <nav className="w-full h-14 z-90 flex flex-row items-center justify-end">
@@ -28,7 +29,9 @@ const MenuHamburguer = () => {
       <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center px-3 py-2 rounded-md text-gray-300 hover:text-white "
+          className="flex items-center px-3 py-2 rounded-md text-gray-300 hover:text-white"
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isOpen}
         >
           <div className="text-gray-300 hover:text-white z-10">
             {isOpen ? (
@@ -70,41 +73,29 @@ const MenuHamburguer = () => {
           </div>
         </button>
       </div>
-      <div className={`menu ${isOpen ? "open" : ""}  flex flex-col `}>
-        <ul className="text-xl text-white flex flex-col gap-5 h-auto w-full bg-[#030014]">
-          <a
-            href="#sobreMim"
-            className={`w-full h-1/3 py-3 gradientMenu flex items-center ml-5 ${
-              activeLink === "#sobreMim"
-                ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
-                : ""
-            }`}
-            onClick={(e) => handleClick(e, "#sobreMim")}
-          >
-            <li className="w-full h-auto">Sobre</li>
-          </a>
-          <a
-            href="#portfolio"
-            className={`w-full h-1/3 py-3 gradientMenu flex items-center ml-5 ${
-              activeLink === "#portfolio"
-                ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
-                : ""
-            }`}
-            onClick={(e) => handleClick(e, "#portfolio")}
-          >
-            <li className="w-full h-auto">Portfolio</li>
-          </a>
-          <a
-            href="#contato"
-            className={`w-full h-1/3 py-3 gradientMenu flex items-center ml-5 ${
-              activeLink === "#contato"
-                ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
-                : ""
-            }`}
-            onClick={(e) => handleClick(e, "#contato")}
-          >
-            <li className="w-full h-auto ">Contato</li>
-          </a>
+
+      {/* Menu dropdown */}
+      <div
+        className={`menu ${
+          isOpen ? "open" : "hidden"
+        } absolute top-14 right-0 w-48 bg-[#030014] flex flex-col shadow-lg rounded-md`}
+      >
+        <ul className="text-xl text-white flex flex-col gap-5 p-4">
+          {navItems.map((item) => (
+            <li key={item.href} className="w-full">
+              <a
+                href={item.href}
+                className={`block w-full py-2 px-3 rounded-md ${
+                  activeLink === item.href
+                    ? "bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent font-semibold"
+                    : "hover:bg-[#1a1a2e]"
+                }`}
+                onClick={(e) => handleClick(e, item.href)}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
@@ -112,15 +103,16 @@ const MenuHamburguer = () => {
 };
 
 const ModelHeader = memo(() => {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("#sobreMim");
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollToSection = (e, id) => {
-    e.preventDefault(); // Evita o comportamento padrão do link
+    e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(id.substring(1)); // Atualiza a seção ativa
+      setActiveSection(id);
+      setIsOpen(false); // Fecha o menu se for desktop também
     }
   };
 
@@ -131,26 +123,33 @@ const ModelHeader = memo(() => {
   ];
 
   return (
-    <div id="sobreMim">
+    <>
+      {/* Mobile menu (hamburguer) */}
       <div className="w-screen h-auto fixed top-0 z-30 p-2 backdrop-blur-xl xl:hidden">
-        <MenuHamburguer />
+        <MenuHamburguer
+          activeLink={activeSection}
+          setActiveLink={setActiveSection}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
       </div>
 
-      <div className="hidden xl:flex justify-between items-center fixed top-0 z-30 p-2 backdrop-blur-xl  w-full">
+      {/* Desktop menu */}
+      <div className="hidden xl:flex justify-between items-center fixed top-0 z-30 p-2 backdrop-blur-xl w-full">
         <h2 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent xl:text-base">
           Igu
         </h2>
         <nav className="ml-8 flex items-center space-x-8">
           {navItems.map((item) => (
             <a
-              key={item.label}
+              key={item.href}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
               className="group relative px-1 py-2 text-xl font-medium xl:text-base"
             >
               <span
                 className={`relative z-10 transition-colors duration-300 ${
-                  activeSection === item.href.substring(1)
+                  activeSection === item.href
                     ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
                     : "text-[#e2d3fd] group-hover:text-white"
                 }`}
@@ -159,7 +158,7 @@ const ModelHeader = memo(() => {
               </span>
               <span
                 className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
-                  activeSection === item.href.substring(1)
+                  activeSection === item.href
                     ? "scale-x-100"
                     : "scale-x-0 group-hover:scale-x-100"
                 }`}
@@ -168,7 +167,7 @@ const ModelHeader = memo(() => {
           ))}
         </nav>
       </div>
-    </div>
+    </>
   );
 });
 
