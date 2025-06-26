@@ -9,7 +9,7 @@ const Background = ({ ballCount }) => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && window.innerWidth < 1024) {
         // Tablet
-        setResponsiveBallCount(ballCount + 1);
+        setResponsiveBallCount(ballCount + 3);
       } else if (window.innerWidth >= 1024) {
         // Desktop
         setResponsiveBallCount(ballCount + 1);
@@ -35,7 +35,7 @@ const Background = ({ ballCount }) => {
   ));
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full z-0 md:grid md:grid-cols-2 md:ml-32">
+    <div className="absolute top-0 left-0 w-full h-full z-0 md:grid md:grid-cols-2 md:left-0 lg:left-44 xl:h-44 ">
       {balls}
     </div>
   );

@@ -74,18 +74,18 @@ const MenuHamburguer = ({ activeLink, setActiveLink, setIsOpen, isOpen }) => {
         </button>
       </div>
 
-      {/* Menu dropdown */}
+      {/* Menu dropdown*/}
+
       <div
-        className={`menu ${
-          isOpen ? "open" : "hidden"
-        } absolute top-14 right-0 w-48 bg-[#030014] flex flex-col shadow-lg rounded-md`}
+        className={`menu ${isOpen ? "open" : "hidden"} 
+        absolute top-12 right-0 w-48 bg-[#030014] flex flex-col shadow-lg rounded-md`}
       >
-        <ul className="text-xl text-white flex flex-col gap-5 p-4">
+        <ul className="text-xl text-white flex flex-col gap-4 p-4 ">
           {navItems.map((item) => (
             <li key={item.href} className="w-full">
               <a
                 href={item.href}
-                className={`block w-full py-2 px-3 rounded-md ${
+                className={`block w-full py-2 px-3 rounded-md  ${
                   activeLink === item.href
                     ? "bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent font-semibold"
                     : "hover:bg-[#1a1a2e]"
@@ -176,3 +176,4 @@ const Header = () => {
 };
 
 export default memo(Header);
+export { MenuHamburguer, ModelHeader, Header };

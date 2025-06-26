@@ -10,10 +10,21 @@ const Navbar_showcase = memo(({ setBallCount }) => {
     event.preventDefault();
     setActive(item);
 
-    if (item === "projetos") {
+    const screenWidth = window.innerWidth;
+
+    if (
+      item === "projetos" &&
+      window.innerWidth >= 768 &&
+      window.innerWidth < 1024
+    ) {
+      // TABLET
+      setBallCount(7);
+    } else if (screenWidth >= 1024) {
+      // DESKTOP
       setBallCount(5);
     } else {
-      setBallCount(3);
+      // MOBILE
+      setBallCount(4);
     }
   };
 

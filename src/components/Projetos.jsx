@@ -1,7 +1,6 @@
 import React, { memo, useState } from "react";
 import { motion } from "framer-motion"; // Importando o framer-motion
 import RelogioDigital from "../images/projetos/relogioDigital.png";
-import Contador from "../images/projetos/contador.png";
 import Appapifilmes from "../images/projetos/appapifilmes.png";
 import LoginValidado from "../images/projetos/loginValidado.png";
 import CalculadoraImc from "../images/projetos/calculadoraimc.png";
@@ -22,13 +21,13 @@ const arrayprojects = [
     github: "https://github.com/IgorBern02/Calculadora-IMC",
     site: "https://igucalculadoraimc.netlify.app/",
   },
-  {
-    img: RelogioDigital,
-    name: "Relógio Digital",
-    desc: "Projeto com a ideia de fazer um Relógio Digital com hora e data ao vivo, feito com Html,Css(Sass),Js.",
-    github: "https://github.com/IgorBern02/digital-clock",
-    site: "https://igorbern02.github.io/digital-clock/",
-  },
+  // {
+  //   img: RelogioDigital,
+  //   name: "Relógio Digital",
+  //   desc: "Projeto com a ideia de fazer um Relógio Digital com hora e data ao vivo, feito com Html,Css(Sass),Js.",
+  //   github: "https://github.com/IgorBern02/digital-clock",
+  //   site: "https://igorbern02.github.io/digital-clock/",
+  // },
 
   {
     img: LoginValidado,
@@ -50,12 +49,27 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
   const [showMore, setShowMore] = useState(false);
 
   const handleShowMore = () => {
-    setShowMore(!showMore);
-    setBallCount(showMore ? 5 : 7);
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 768 && screenWidth < 1024) {
+      // TABLET
+      setShowMore(!showMore);
+      setBallCount(showMore ? 5 : 7);
+    } else if (screenWidth >= 1024) {
+      // DESKTOP
+      setShowMore(!showMore);
+      setBallCount(showMore ? 5 : 7);
+    } else {
+      setShowMore(!showMore);
+      setBallCount(showMore ? 5 : 6);
+    }
   };
 
   return (
-    <section className="grid grid-cols-1 overflow-y-auto p-2 gap-10 text-white z-10 md:grid-cols-2 lg:grid-cols-3">
+    <section
+      id="portfolio"
+      className="grid grid-cols-1  p-2 gap-10 text-white z-10 scroll-mt-52 md:grid-cols-2 lg:grid-cols-3"
+    >
       {projects.slice(0, showMore ? projects.length : 3).map((proj, index) => (
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,11 +79,13 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
           key={proj.name}
         >
           <div className="w-full h-44 flex flex-row rounded md:h-48 lg:h-52 xl:h-44">
-            <img
-              src={proj.img}
-              alt={proj.name}
-              className="w-full object-cover rounded"
-            />
+            <a href={proj.site} target="_blank" rel="noopener noreferrer">
+              <img
+                src={proj.img}
+                alt={proj.name}
+                className="w-full object-cover rounded"
+              />
+            </a>
           </div>
           <section className="w-full text-wrap flex flex-col gap-3 p-2">
             <h1 className="font-semibold text-xl font-mono md:text-2xl xl:text-lg">

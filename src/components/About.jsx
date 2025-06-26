@@ -19,12 +19,13 @@ const TypingText = ({ text, delay }) => {
 const ModelAboutMe = memo(() => {
   return (
     <div
-      className="w-full gap-10 p-2 flex flex-col items-center justify-around"
-      id="portfolio"
+      className="w-full gap-10 p-2 flex flex-col items-center justify-around scroll-mt-28"
+      id="sobreMim"
     >
       <div className="w-full h-auto p-4 z-10 md:flex md:flex-col md:items-center md:text-left ">
         <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64 lg:mr-[340px] xl:text-xl xl:mr-[285px]">
-          Igor Bernardes
+          {/* Igor Bernardes */}
+          <TypingText text="Igor Bernardes" delay={100} />
         </p>
         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-6xl font-bold tracking-tight">
           <span className="relative inline-block">
