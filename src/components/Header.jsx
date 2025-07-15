@@ -75,7 +75,6 @@ const MenuHamburguer = ({ activeLink, setActiveLink, setIsOpen, isOpen }) => {
       </div>
 
       {/* Menu dropdown*/}
-
       <div
         className={`menu ${isOpen ? "open" : "hidden"} 
         absolute top-12 right-0 w-48 bg-[#030014] flex flex-col shadow-lg rounded-md`}

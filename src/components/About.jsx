@@ -45,35 +45,27 @@ const ModelAboutMe = memo(() => {
       </div>
 
       <div className="w-full h-auto flex flex-row items-center justify-start p-2 gap-4">
-        {/* Instagram */}
+        {/* Botão de Baixar Currículo */}
         <div className="border flex items-center p-1 rounded-lg border-white/10">
-          <a
-            href="https://www.instagram.com/ft.iguu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/portfolio_2025/curriculo_igor_bernardes.pdf" download>
             <button className="group relative p-1">
+              {/* Ícone de download ou outro que represente um currículo */}
               <svg
-                className="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12 xl:w-10 xl:h-10"
-                aria-hidden="true"
+                className="w-10 h-10 text-gray-400 group-hover:text-white transition-colors"
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
                 fill="none"
                 viewBox="0 0 24 24"
               >
                 <path
                   fill="currentColor"
-                  fillRule="evenodd"
-                  d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
-                  clipRule="evenodd"
+                  d="M12 16.5l-4-4h2.5V4h3v8.5H16l-4 4ZM5 18h14v2H5v-2Z"
                 />
               </svg>
             </button>
           </a>
         </div>
 
-        {/* LinkedIn */}
+        {/* Botão LinkedIn */}
         <div className="border flex items-center p-1 rounded-lg border-white/10">
           <a
             href="https://www.linkedin.com/in/igor-bernardes-05aa05204/"
@@ -82,11 +74,7 @@ const ModelAboutMe = memo(() => {
           >
             <button className="group relative p-1">
               <svg
-                className="w-10 h-10 text-gray-400 group-hover:text-white transition-colors md:w-12 md:h-12 xl:w-10 xl:h-10"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                className="w-10 h-10 text-gray-400 group-hover:text-white transition-colors"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
