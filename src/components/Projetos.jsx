@@ -1,10 +1,9 @@
-import React, { memo, useState } from "react";
+import { memo, useState } from "react";
 import { motion } from "framer-motion"; // Importando o framer-motion
-import RelogioDigital from "../images/projetos/relogioDigital.png";
 import Appapifilmes from "../images/projetos/appapifilmes.png";
 import LoginValidado from "../images/projetos/loginValidado.png";
-import CalculadoraImc from "../images/projetos/calculadoraimc.png";
 import SistemaBanco from "../images/projetos/sistemaBanco.png";
+import N8nIA from "../images/projetos/n8nIA.png";
 
 const arrayprojects = [
   {
@@ -15,20 +14,12 @@ const arrayprojects = [
     site: "https://igorbern02.github.io/app-api-filmes/",
   },
   {
-    img: CalculadoraImc,
-    name: "Calculadora IMC",
-    desc: "Uma calculadora básica de IMC",
-    github: "https://github.com/IgorBern02/Calculadora-IMC",
-    site: "https://igucalculadoraimc.netlify.app/",
+    img: N8nIA,
+    name: "Gerador de codigo CSS",
+    desc: "Projeto que utiliza inteligência artificial para gerar estilos CSS personalizados com base em comandos de texto. Integrado com o n8n para automatizar o fluxo entre a interface e a IA.",
+    github: "https://github.com/IgorBern02/n8n-css-ia",
+    site: "https://igorbern02.github.io/n8n-css-ia/",
   },
-  // {
-  //   img: RelogioDigital,
-  //   name: "Relógio Digital",
-  //   desc: "Projeto com a ideia de fazer um Relógio Digital com hora e data ao vivo, feito com Html,Css(Sass),Js.",
-  //   github: "https://github.com/IgorBern02/digital-clock",
-  //   site: "https://igorbern02.github.io/digital-clock/",
-  // },
-
   {
     img: LoginValidado,
     name: "Login Validação",
