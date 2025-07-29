@@ -111,6 +111,6 @@ const ModalContact = memo(() => (
   </section>
 ));
 
-const Contact = () => <ModalContact />;
+export const Contact = () => <ModalContact />;
 
-export default memo(Contact);
+// export default memo(Contact);

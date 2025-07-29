@@ -111,7 +111,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
   );
 });
 
-const Showcase = ({ setBallCount }) => {
+export const Showcase = ({ setBallCount }) => {
   return (
     <div className="w-full h-full relative">
       <Navbar_showcase setBallCount={setBallCount} />
@@ -119,4 +119,4 @@ const Showcase = ({ setBallCount }) => {
   );
 };
 
-export default memo(Showcase);
+// export default memo(Showcase);

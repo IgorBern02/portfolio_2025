@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../index.css";
 
 // { ballCount }
-const Background = ({ ballCount }) => {
+export const Background = ({ ballCount }) => {
   const [responsiveBallCount, setResponsiveBallCount] = useState(ballCount);
 
   useEffect(() => {
@@ -40,5 +40,3 @@ const Background = ({ ballCount }) => {
     </div>
   );
 };
-
-export default Background;

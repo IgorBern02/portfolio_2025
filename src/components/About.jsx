@@ -93,6 +93,6 @@ const ModelAboutMe = memo(() => {
   );
 });
 
-const AboutMe = () => <ModelAboutMe />;
+export const AboutMe = () => <ModelAboutMe />;
 
-export default memo(AboutMe);
+// export default memo(AboutMe);
