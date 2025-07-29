@@ -31,7 +31,7 @@ export const Header = () => {
         <h2 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent xl:text-base">
           Igu
         </h2>
-        <nav className="ml-8 flex items-center space-x-8">
+        <nav className="ml-8 flex items-center space-x-8 ">
           {navItems.map((item) => (
             <a
               key={item.href}

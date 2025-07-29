@@ -1,22 +1,7 @@
 import React, { memo, useState, useEffect } from "react";
+import { TypingText } from "./TypingText";
 
-const TypingText = ({ text, delay }) => {
-  const [typedText, setTypedText] = useState("");
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (typedText !== text) {
-        setTypedText(typedText + text[typedText.length]);
-      }
-    }, delay);
-
-    return () => clearTimeout(timeout);
-  }, [typedText, text, delay]);
-
-  return <>{typedText}</>;
-};
-
-const ModelAboutMe = memo(() => {
+export const AboutMe = () => {
   return (
     <div
       className="w-full gap-10 p-2 flex flex-col items-center justify-around scroll-mt-28"
@@ -24,7 +9,6 @@ const ModelAboutMe = memo(() => {
     >
       <div className="w-full h-auto p-4 z-10 md:flex md:flex-col md:items-center md:text-left ">
         <p className="text-lg font-mono font-medium text-white md:text-2xl md:mr-64 lg:mr-[340px] xl:text-xl xl:mr-[285px]">
-          {/* Igor Bernardes */}
           <TypingText text="Igor Bernardes" delay={100} />
         </p>
         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-6xl font-bold tracking-tight">
@@ -49,9 +33,8 @@ const ModelAboutMe = memo(() => {
         <div className="border flex items-center p-1 rounded-lg border-white/10">
           <a href="/portfolio_2025/curriculo_igor_bernardes.pdf?v=2" download>
             <button className="group relative p-1">
-              {/* Ícone de download ou outro que represente um currículo */}
               <svg
-                className="w-10 h-10 text-gray-400 group-hover:text-white transition-colors"
+                className="w-7 h-7 text-gray-400 group-hover:text-white transition-colors"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -74,7 +57,7 @@ const ModelAboutMe = memo(() => {
           >
             <button className="group relative p-1">
               <svg
-                className="w-10 h-10 text-gray-400 group-hover:text-white transition-colors"
+                className="w-7 h-7 text-gray-400 group-hover:text-white transition-colors"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -91,8 +74,6 @@ const ModelAboutMe = memo(() => {
       </div>
     </div>
   );
-});
-
-export const AboutMe = () => <ModelAboutMe />;
+};
 
 // export default memo(AboutMe);

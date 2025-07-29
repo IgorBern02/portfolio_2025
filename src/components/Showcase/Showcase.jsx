@@ -1,6 +1,6 @@
 import React, { useState, useEffect, memo } from "react";
-import Projetos from "./Projetos";
-import Skills from "./Skills";
+import Projetos from "../Projetos";
+import Skills from "../Skills";
 import "../index.css";
 
 const Navbar_showcase = memo(({ setBallCount }) => {
