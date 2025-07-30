@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { NavbarShowcase } from "./NavbarShowcase";
-import Projects from "../Projects/Projects";
-import SkillsSection from "../Skills/Skills";
-import "../../index.css";
-import { Props } from "../../types/types";
+import Projects from "../projects/Projects";
+import SkillsSection from "../skills/Skills";
+import "../../styles/index.css";
+import { ShowcaseProps } from "@/src/types/types";
+import { arrayprojects } from "../projects/arrayprojects";
 
-export const Showcase = ({ setBallCount }: Props) => {
+export const Showcase = ({ setBallCount }: ShowcaseProps) => {
   const [activeTab, setActiveTab] = useState("projetos");
 
   return (
@@ -14,7 +15,7 @@ export const Showcase = ({ setBallCount }: Props) => {
       <div className="w-full h-full relative xl:flex xl:flex-col xl:items-center">
         {activeTab === "projetos" && (
           <div className="content active xl:w-3/4">
-            <Projects setBallCount={setBallCount} />
+            <Projects projects={arrayprojects} setBallCount={setBallCount} />
           </div>
         )}
         {activeTab === "tecnologias" && (

@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-const ModelFooter = memo(() => {
+export const Footer = () => {
   return (
     <footer className="bg-bgProjetos gap-3 text-white w-full h-auto py-5 flex flex-col items-center justify-center xl:py-3">
       <p className="text-sm md:text-base xl:text-sm">
@@ -9,8 +9,4 @@ const ModelFooter = memo(() => {
       </p>
     </footer>
   );
-});
-
-export const Footer = () => <ModelFooter />;
-
-// export default memo(Footer);
+};

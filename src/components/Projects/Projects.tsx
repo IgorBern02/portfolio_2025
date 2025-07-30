@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { motion } from "framer-motion";
 import { arrayprojects } from "./arrayprojects";
-import { ModalProjectsProps } from "../../types/types";
+import { ModalProjectsProps } from "@/src/types/types";
 
 const ModalProjects = memo(({ projects, setBallCount }: ModalProjectsProps) => {
   const [showMore, setShowMore] = useState(false);

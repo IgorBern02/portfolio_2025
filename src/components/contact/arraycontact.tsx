@@ -1,12 +1,18 @@
-import React, { memo } from "react";
-import { motion } from "framer-motion";
+import { ContactType } from "../../types/types";
 
-const numberWpp = "5513991246604";
+const buildWppUrl = (number: string, message: string) => {
+  const formattedNumber = number.replace(/\D/g, "13991246604");
+  const encodedMessage = encodeURIComponent(message);
+  return `https://api.whatsapp.com/send?phone=${formattedNumber}&text=${encodedMessage}`;
+};
 
-const contacts = [
+export const contacts: ContactType[] = [
   {
     name: "Whatsapp",
-    url: `https://api.whatsapp.com/send?phone=${numberWpp}`,
+    url: buildWppUrl(
+      "13991246604",
+      "Olá! Vim pelo seu portfólio e gostaria de saber mais sobre."
+    ),
     img: (
       <svg
         className="w-8 h-8 text-white md:w-10 md:h-10 xl:w-8 xl:h-8"
@@ -74,43 +80,3 @@ const contacts = [
     ),
   },
 ];
-
-const ModalContact = memo(() => (
-  <section
-    className="w-full h-auto p-3 flex flex-col justify-center items-center z-50"
-    id="contato"
-  >
-    <div>
-      <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent md:text-5xl xl:text-4xl">
-        Contato
-      </h1>
-    </div>
-    <div className="w-full h-full flex flex-col items-center p-3 gap-5 rounded-lg mt-5 md:bg-transparent">
-      {contacts.map((item) => (
-        <motion.div
-          key={item.name}
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="w-3/4 h-auto flex flex-row items-center border border-white/20 rounded-lg backdrop-blur-xl cursor-pointer md:w-2/4 xl:w-2/5 hover:border-white hover:duration-300"
-        >
-          <a
-            href={item.url}
-            className="w-full h-full flex flex-row items-center gap-3 px-5 p-2 md:p-4 xl:p-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="text-3xl">{item.img}</span>
-            <span className="text-base text-white md:text-lg xl:text-sm">
-              {item.name}
-            </span>
-          </a>
-        </motion.div>
-      ))}
-    </div>
-  </section>
-));
-
-export const Contact = () => <ModalContact />;
-
-// export default memo(Contact);

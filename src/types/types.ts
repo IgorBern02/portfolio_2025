@@ -1,6 +1,26 @@
-export interface Props {
+// Background component props and types
+export interface BackgroundProps {
+  ballCount: number;
+}
+
+// Showcase component props and types
+export interface ShowcaseProps {
   setBallCount: (count: number) => void;
   onTabChange: (tab: string) => void;
+}
+
+// AboutMe component props and types
+export interface TypingTextProps {
+  text: string;
+  delay: number;
+}
+
+// Header component props and types
+export interface MenuHamburguerProps {
+  activeLink: string;
+  setActiveLink: (link: string) => void;
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
 }
 
 export interface Project {
@@ -16,6 +36,7 @@ export interface ModalProjectsProps {
   setBallCount: (count: number) => void;
 }
 
+// Skills component props and types
 export interface Skill {
   icon: string;
   name: string;
@@ -23,4 +44,15 @@ export interface Skill {
 
 export type ModalSkillsProps = {
   skills: Skill[];
+};
+
+// Contact component props and types
+export type ContactType = {
+  name: string;
+  url: string;
+  img: React.ReactNode;
+};
+
+export type ModalContactProps = {
+  contact: ContactType;
 };

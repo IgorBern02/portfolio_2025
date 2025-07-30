@@ -2,7 +2,7 @@ import Appapifilmes from "../../assets/images/projects/appapifilmes.png";
 import N8nIA from "../../assets/images/projects/n8nIA.png";
 import LoginValidado from "../../assets/images/projects/loginvalidado.png";
 import SistemaBanco from "../../assets/images/projects/sistemabanco.png";
-import { Project } from "../../types/types";
+import { Project } from "@/src/types/types";
 
 export const arrayprojects: Project[] = [
   {

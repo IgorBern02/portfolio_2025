@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { ModalSkillsProps } from "../../types/types";
+import { ModalSkillsProps } from "@/src/types/types";
 import { skills } from "./arrayskills";
 
 const itemVariants = {

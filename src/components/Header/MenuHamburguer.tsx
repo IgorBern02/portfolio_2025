@@ -1,19 +1,13 @@
 import { scrollToId } from "../../utils/scrollToId";
 import { navItems } from "./navItems";
-
-interface Props {
-  activeLink: string;
-  setActiveLink: (link: string) => void;
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-}
+import { MenuHamburguerProps } from "@/src/types/types";
 
 export const MenuHamburguer = ({
   activeLink,
   setActiveLink,
   isOpen,
   setIsOpen,
-}: Props) => {
+}: MenuHamburguerProps) => {
   const handleClick = (e: React.MouseEvent, link: string) => {
     e.preventDefault();
     setActiveLink(link);

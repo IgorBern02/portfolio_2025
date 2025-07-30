@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../index.css";
+import "../../styles/index.css";
+import { BackgroundProps } from "@/src/types/types";
 
 // { ballCount }
-export const Background = ({ ballCount }) => {
+export const Background = ({ ballCount }: BackgroundProps) => {
   const [responsiveBallCount, setResponsiveBallCount] = useState(ballCount);
 
   useEffect(() => {

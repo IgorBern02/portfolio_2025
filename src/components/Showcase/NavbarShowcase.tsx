@@ -1,5 +1,5 @@
 import React, { useState, memo } from "react";
-import { Props } from "../../types/types";
+import { Props } from "@/src/types/types";
 
 export const NavbarShowcase = memo(({ setBallCount, onTabChange }: Props) => {
   const [active, setActive] = useState("projetos");
