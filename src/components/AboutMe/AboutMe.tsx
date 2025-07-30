@@ -1,4 +1,3 @@
-import React, { memo, useState, useEffect } from "react";
 import { TypingText } from "./TypingText";
 
 export const AboutMe = () => {
