@@ -1,53 +1,18 @@
 import { memo, useState } from "react";
-import { motion } from "framer-motion"; // Importando o framer-motion
-import Appapifilmes from "../images/projetos/appapifilmes.png";
-import LoginValidado from "../images/projetos/loginValidado.png";
-import SistemaBanco from "../images/projetos/sistemaBanco.png";
-import N8nIA from "../images/projetos/n8nIA.png";
+import { motion } from "framer-motion";
+import { arrayprojects } from "./arrayprojects";
+import { ModalProjectsProps } from "../../types/types";
 
-const arrayprojects = [
-  {
-    img: Appapifilmes,
-    name: "API de Filmes",
-    desc: "Uma pagina que consome uma API de filmes, onde podemos ver a descrição de diversos filmes e fazer pesquisa pelo nome deles.",
-    github: "https://github.com/IgorBern02/app-api-filmes",
-    site: "https://igorbern02.github.io/app-api-filmes/",
-  },
-  {
-    img: N8nIA,
-    name: "Gerador de codigo CSS",
-    desc: "Projeto que utiliza inteligência artificial para gerar estilos CSS personalizados com base em comandos de texto. Integrado com o n8n para automatizar o fluxo entre a interface e a IA.",
-    github: "https://github.com/IgorBern02/n8n-css-ia",
-    site: "https://igorbern02.github.io/n8n-css-ia/",
-  },
-  {
-    img: LoginValidado,
-    name: "Login Validação",
-    desc: "Login com validação feito com firebase.",
-    github: "https://github.com/IgorBern02/Login_Validado",
-    site: "https://igorbern02.github.io/Login_Validado/",
-  },
-  {
-    img: SistemaBanco,
-    name: "Sistema Banco",
-    desc: "Um sistema de banco padrão, onde mostra o saldo da conta e através dele podemos simular saques e depósitos.",
-    github: "https://github.com/IgorBern02/Sistema-Banco",
-    site: "https://igorbern02.github.io/Sistema-Banco/",
-  },
-];
-
-const ModalProjects = memo(({ projects, setBallCount }) => {
+const ModalProjects = memo(({ projects, setBallCount }: ModalProjectsProps) => {
   const [showMore, setShowMore] = useState(false);
 
   const handleShowMore = () => {
     const screenWidth = window.innerWidth;
 
     if (screenWidth >= 768 && screenWidth < 1024) {
-      // TABLET
       setShowMore(!showMore);
       setBallCount(showMore ? 5 : 7);
     } else if (screenWidth >= 1024) {
-      // DESKTOP
       setShowMore(!showMore);
       setBallCount(showMore ? 5 : 7);
     } else {
@@ -59,9 +24,9 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
   return (
     <section
       id="portfolio"
-      className="grid grid-cols-1  p-2 gap-10 text-white z-10 scroll-mt-52 md:grid-cols-2 lg:grid-cols-3"
+      className="grid grid-cols-1 p-2 gap-10 text-white z-10 scroll-mt-52 md:grid-cols-2 lg:grid-cols-3"
     >
-      {projects.slice(0, showMore ? projects.length : 3).map((proj, index) => (
+      {projects.slice(0, showMore ? projects.length : 3).map((proj) => (
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}
@@ -87,13 +52,8 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
             </p>
           </section>
           <section className="w-full flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4">
-            <a
-              href={proj.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${proj.name} GitHub`}
-            >
-              <button type="button" aria-hidden="true">
+            <a href={proj.github} target="_blank" rel="noopener noreferrer">
+              <button type="button" aria-label={`${proj.name} GitHub`}>
                 <svg
                   className="w-10 h-10 text-white md:w-12 md:h-12 xl:w-9 xl:h-9"
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,13 +70,8 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
                 </svg>
               </button>
             </a>
-            <a
-              href={proj.site}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${proj.name} Site`}
-            >
-              <button type="button" aria-hidden="true">
+            <a href={proj.site} target="_blank" rel="noopener noreferrer">
+              <button type="button" aria-label={`${proj.name} Site`}>
                 <svg
                   className="w-10 h-10 text-white xl:w-9 xl:h-9"
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,50 +98,14 @@ const ModalProjects = memo(({ projects, setBallCount }) => {
           className="flex flex-row items-center justify-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer md:text-xl md:py-4 xl:text-base hover:border-white hover:duration-300"
         >
           {showMore ? "Ver Menos" : "Ver Mais"}
-          {showMore ? (
-            // Seta para cima ao lado de "Ver Menos"
-            <svg
-              className="w-6 h-6 text-white ml-4 md:w-8 xl:w-5 xl:h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m5 15 7-7 7 7"
-              />
-            </svg>
-          ) : (
-            // Seta para baixo ao lado de "Ver Mais"
-            <svg
-              className="w-6 h-6 text-white ml-4 xl:w-5 xl:h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m19 9-7 7-7-7"
-              />
-            </svg>
-          )}
+          {/* Setas SVG */}
         </button>
       </div>
     </section>
   );
 });
 
-const Projects = ({ setBallCount }) => {
+const Projects = ({ setBallCount }: ModalProjectsProps) => {
   return (
     <section className="w-full h-auto gap-10 p-2 flex flex-col z-50">
       <ModalProjects projects={arrayprojects} setBallCount={setBallCount} />

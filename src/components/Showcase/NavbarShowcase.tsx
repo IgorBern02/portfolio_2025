@@ -1,29 +1,20 @@
-import React, { useState, useEffect, memo } from "react";
-import Projetos from "../Projetos";
-import Skills from "../Skills";
-import "../index.css";
+import React, { useState, memo } from "react";
+import { Props } from "../../types/types";
 
-const Navbar_showcase = memo(({ setBallCount }) => {
+export const NavbarShowcase = memo(({ setBallCount, onTabChange }: Props) => {
   const [active, setActive] = useState("projetos");
 
-  const handleClick = (item, event) => {
+  const handleClick = (item: string, event: React.MouseEvent) => {
     event.preventDefault();
     setActive(item);
+    onTabChange(item);
 
     const screenWidth = window.innerWidth;
-
-    if (
-      item === "projetos" &&
-      window.innerWidth >= 768 &&
-      window.innerWidth < 1024
-    ) {
-      // TABLET
+    if (item === "projetos" && screenWidth >= 768 && screenWidth < 1024) {
       setBallCount(7);
     } else if (screenWidth >= 1024) {
-      // DESKTOP
       setBallCount(5);
     } else {
-      // MOBILE
       setBallCount(4);
     }
   };
@@ -34,7 +25,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
         <li
           className={`flex flex-col items-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer${
             active === "projetos"
-              ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1]"
+              ? " active bg-gradient-to-r from-[#a855f7] to-[#6366f1]"
               : ""
           }`}
           onClick={(event) => handleClick("projetos", event)}
@@ -44,6 +35,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
             className="flex flex-col items-center text-xl xl:text-base"
           >
             <span>
+              {" "}
               <svg
                 className="w-6 h-6 text-white md:w-8 md:h-8 xl:w-6 xl:h-6"
                 aria-hidden="true"
@@ -68,7 +60,7 @@ const Navbar_showcase = memo(({ setBallCount }) => {
         <li
           className={`flex flex-col items-center border border-white/20 w-full text-lg text-white py-2 rounded-lg backdrop-blur-xl cursor-pointer${
             active === "tecnologias"
-              ? "active bg-gradient-to-r from-[#a855f7] to-[#6366f1]"
+              ? " active bg-gradient-to-r from-[#a855f7] to-[#6366f1]"
               : ""
           }`}
           onClick={(event) => handleClick("tecnologias", event)}
@@ -95,28 +87,6 @@ const Navbar_showcase = memo(({ setBallCount }) => {
           </a>
         </li>
       </ul>
-      <div className="w-full h-full relative xl:flex xl:flex-col xl:items-center">
-        {active === "projetos" && (
-          <div className="content active xl:w-3/4">
-            <Projetos setBallCount={setBallCount} />
-          </div>
-        )}
-        {active === "tecnologias" && (
-          <div className="content active">
-            <Skills />
-          </div>
-        )}
-      </div>
     </nav>
   );
 });
-
-export const Showcase = ({ setBallCount }) => {
-  return (
-    <div className="w-full h-full relative">
-      <Navbar_showcase setBallCount={setBallCount} />
-    </div>
-  );
-};
-
-// export default memo(Showcase);
