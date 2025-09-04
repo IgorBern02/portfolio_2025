@@ -13,7 +13,7 @@ export const Background = ({ ballCount }: BackgroundProps) => {
         setResponsiveBallCount(ballCount + 3);
       } else if (window.innerWidth >= 1024) {
         // Desktop
-        setResponsiveBallCount(ballCount + 3);
+        setResponsiveBallCount(ballCount + 1);
       } else {
         // Mobile
         setResponsiveBallCount(ballCount);

@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 import { contacts } from "./arraycontact";
 import { ContactItem } from "./ContactItem";
-import { Form } from "./form/form";
 
 export const ModalContact: React.FC = () => (
   <section
@@ -18,8 +17,6 @@ export const ModalContact: React.FC = () => (
         <ContactItem key={contact.name} contact={contact} />
       ))}
     </div>
-
-    <Form />
   </section>
 );
 
