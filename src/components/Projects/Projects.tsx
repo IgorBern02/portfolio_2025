@@ -31,10 +31,11 @@ const ModalProjects = memo(({ projects, setBallCount }: ModalProjectsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="w-full h-auto bg-bgProjetos rounded-xl truncate flex flex-col p-2 gap-3 cursor-pointer md:relative md:h-[450px] lg:h-[500px] xl:h-[460px] hover:scale-110"
+          className="w-full h-full bg-bgProjetos rounded-xl flex flex-col p-2 gap-3 cursor-pointer hover:scale-110"
           key={proj.name}
         >
-          <div className="w-full h-44 flex flex-row rounded md:h-48 lg:h-52 xl:h-44">
+          {/* Imagem */}
+          <div className="w-full h-44 flex rounded md:h-48 lg:h-52 xl:h-44">
             <a href={proj.site} target="_blank" rel="noopener noreferrer">
               <img
                 src={proj.img}
@@ -43,7 +44,9 @@ const ModalProjects = memo(({ projects, setBallCount }: ModalProjectsProps) => {
               />
             </a>
           </div>
-          <section className="w-full text-wrap flex flex-col gap-3 p-2">
+
+          {/* Texto */}
+          <section className="flex flex-col gap-3 p-2">
             <h1 className="font-semibold text-xl font-mono md:text-2xl xl:text-lg">
               {proj.name}
             </h1>
@@ -51,7 +54,9 @@ const ModalProjects = memo(({ projects, setBallCount }: ModalProjectsProps) => {
               {proj.desc}
             </p>
           </section>
-          <section className="w-full flex flex-row justify-end items-center gap-2 md:absolute md:bottom-2 md:right-5 md:gap-4">
+
+          {/* Ícones SEMPRE embaixo */}
+          <section className="mt-auto flex flex-row justify-end items-center gap-2 p-2">
             <a href={proj.github} target="_blank" rel="noopener noreferrer">
               <button type="button" aria-label={`${proj.name} GitHub`}>
                 <svg

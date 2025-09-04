@@ -1,12 +1,4 @@
-interface PropsInput {
-  type: string;
-  name?: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  className?: string;
-  required?: boolean;
-}
+import type { PropsInputContact } from "../../../../types/types";
 
 export const Input = ({
   type,
@@ -16,7 +8,7 @@ export const Input = ({
   onChange,
   className,
   required,
-}: PropsInput) => {
+}: PropsInputContact) => {
   return (
     <input
       type={type}
