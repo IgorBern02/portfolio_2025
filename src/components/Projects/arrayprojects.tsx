@@ -6,6 +6,7 @@ import TodoList from "../../assets/images/projects/todolist.png";
 import BelezaEstilo from "../../assets/images/projects/beleza&estilo.png";
 import APIcars from "../../assets/images/projects/apicars.png";
 import GerarCertificado from "../../assets/images/projects/gerarcertificado.png";
+import FakeStore from "../../assets/images/projects/fakestore.png";
 import { Project } from "@/src/types/types";
 
 export const arrayprojects: Project[] = [
@@ -50,5 +51,12 @@ export const arrayprojects: Project[] = [
     desc: "GeradorCertificado é uma ferramenta rápida e intuitiva para criar certificados personalizados online. Insira os dados desejados, e em poucos cliques gere um certificado visualmente agradável, pronto para download ou impressão.",
     github: "https://github.com/IgorBern02/gerador-certificado",
     site: "gerador-certificado-beta.vercel.app",
+  },
+  {
+    img: FakeStore,
+    name: "Fake Store",
+    desc: "Projeto de e-commerce que simula uma loja online, com catálogo de produtos, carrinho de compras e checkout. Desenvolvido com React, Vite, Tailwind CSS e TypeScript. Utiliza a Fake Store API para obter dados dos produtos.",
+    github: "https://github.com/IgorBern02/fakestore",
+    site: "https://fakestore-amber.vercel.app/",
   },
 ];
