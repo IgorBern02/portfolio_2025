@@ -25,27 +25,6 @@ export const arrayprojects: Project[] = [
     site: "https://igorbern02.github.io/n8n-css-ia/",
   },
   {
-    img: TodoList,
-    name: "Todo List",
-    desc: "Projeto de lista de tarefas simples e funcional. Permite adicionar, filtrar, editar e remover tarefas, com persistência dos dados via API local (json-server).",
-    github: "https://github.com/IgorBern02/ToDoList",
-    site: "https://igorbern02.github.io/ToDoList/",
-  },
-  {
-    img: BelezaEstilo,
-    name: "Beleza & Estilo",
-    desc: "Prótotipo de site para um salão de beleza, resposivo e feito com react, vite, tailwind e framer-motion. Com simulação de agendamentos via WhatsApp.",
-    github: "https://github.com/IgorBern02/salaodebeleza",
-    site: "https://igorbern02.github.io/salaodebeleza/",
-  },
-  {
-    img: APIcars,
-    name: "API de Carros",
-    desc: "Uma API de carros que permite consultar informações sobre diversos modelos, incluindo marca, modelo, ano e preço. Desenvolvida com Node.js e Express. E o frontend foi feito com React e Tailwind.",
-    github: "https://github.com/IgorBern02/cars_site",
-    site: "https://cars-site-ochre.vercel.app/",
-  },
-  {
     img: GerarCertificado,
     name: "Gerador de Certificado",
     desc: "GeradorCertificado é uma ferramenta rápida e intuitiva para criar certificados personalizados online. Insira os dados desejados, e em poucos cliques gere um certificado visualmente agradável, pronto para download ou impressão.",
@@ -58,5 +37,27 @@ export const arrayprojects: Project[] = [
     desc: "Projeto de e-commerce que simula uma loja online, com catálogo de produtos, carrinho de compras e checkout. Desenvolvido com React, Vite, Tailwind CSS e TypeScript. Utiliza a Fake Store API para obter dados dos produtos.",
     github: "https://github.com/IgorBern02/fakestore",
     site: "https://fakestore-amber.vercel.app/",
+  },
+  {
+    img: APIcars,
+    name: "API de Carros",
+    desc: "Uma API de carros que permite consultar informações sobre diversos modelos, incluindo marca, modelo, ano e preço. Desenvolvida com Node.js e Express. E o frontend foi feito com React e Tailwind.",
+    github: "https://github.com/IgorBern02/cars_site",
+    site: "https://cars-site-ochre.vercel.app/",
+  },
+  {
+    img: BelezaEstilo,
+    name: "Beleza & Estilo",
+    desc: "Prótotipo de site para um salão de beleza, resposivo e feito com react, vite, tailwind e framer-motion. Com simulação de agendamentos via WhatsApp.",
+    github: "https://github.com/IgorBern02/salaodebeleza",
+    site: "https://igorbern02.github.io/salaodebeleza/",
+  },
+
+  {
+    img: TodoList,
+    name: "Todo List",
+    desc: "Projeto de lista de tarefas simples e funcional. Permite adicionar, filtrar, editar e remover tarefas, com persistência dos dados via API local (json-server).",
+    github: "https://github.com/IgorBern02/ToDoList",
+    site: "https://igorbern02.github.io/ToDoList/",
   },
 ];
