@@ -29,7 +29,7 @@ export const arrayprojects: Project[] = [
     name: "Gerador de Certificado",
     desc: "GeradorCertificado é uma ferramenta rápida e intuitiva para criar certificados personalizados online. Insira os dados desejados, e em poucos cliques gere um certificado visualmente agradável, pronto para download ou impressão.",
     github: "https://github.com/IgorBern02/gerador-certificado",
-    site: "gerador-certificado-beta.vercel.app",
+    site: "https://gerador-certificado-beta.vercel.app/certificados",
   },
   {
     img: FakeStore,
