@@ -1,12 +1,12 @@
 import Appapifilmes from "../../assets/images/projects/appapifilmes.png";
 import N8nIA from "../../assets/images/projects/n8nIA.png";
-// import LoginValidado from "../../assets/images/projects/loginvalidado.png";
-import SistemaBanco from "../../assets/images/projects/sistemabanco.png";
+
 import TodoList from "../../assets/images/projects/todolist.png";
 import BelezaEstilo from "../../assets/images/projects/beleza&estilo.png";
 import APIcars from "../../assets/images/projects/apicars.png";
 import GerarCertificado from "../../assets/images/projects/gerarcertificado.png";
 import FakeStore from "../../assets/images/projects/fakestore.png";
+import QuizCountry from "../../assets/images/projects/quizCountry.png";
 import { Project } from "@/src/types/types";
 
 export const arrayprojects: Project[] = [
@@ -52,7 +52,13 @@ export const arrayprojects: Project[] = [
     github: "https://github.com/IgorBern02/salaodebeleza",
     site: "https://igorbern02.github.io/salaodebeleza/",
   },
-
+  {
+    img: QuizCountry,
+    name: "Quiz Countries",
+    desc: "Quiz para acertar bandeiras de paises, tambem tem um ranking para as 3 melhores pontuações do jogo.",
+    github: "https://github.com/IgorBern02/quiz_country",
+    site: "https://quiz-country-rho.vercel.app/",
+  },
   {
     img: TodoList,
     name: "Todo List",
