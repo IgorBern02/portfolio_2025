@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
-import { Header } from "./components/header/Header";
-import { AboutMe } from "./components/aboutMe/AboutMe";
+import { Header } from "./components/Header/Header";
+import { AboutMe } from "./components/AboutMe/AboutMe";
 import { Footer } from "./components/footer/Footer";
 import { Background } from "./components/background/Background";
-import { Showcase } from "./components/showcase/Showcase";
+import { Showcase } from "./components/Showcase/Showcase";
 import { Contact } from "./components/contact/Contact";
 
 function App() {

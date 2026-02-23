@@ -1,4 +1,10 @@
 import React, { useState, memo } from "react";
+import { ShowcaseProps } from "@/src/types/types";
+
+interface Props {
+  setBallCount: (count: number) => void;
+  onTabChange: (tab: string) => void;
+}
 
 export const NavbarShowcase = memo(({ setBallCount, onTabChange }: Props) => {
   const [active, setActive] = useState("projetos");

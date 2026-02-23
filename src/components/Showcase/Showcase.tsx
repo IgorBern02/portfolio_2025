@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { NavbarShowcase } from "./NavbarShowcase";
-import Projects from "../projects/Projects";
-import SkillsSection from "../skills/Skills";
+import Projects from "../Projects/Projects";
+import SkillsSection from "../Skills/Skills";
 import "../../styles/index.css";
 import { ShowcaseProps } from "@/src/types/types";
-import { arrayprojects } from "../projects/arrayprojects";
+import { arrayprojects } from "../Projects/arrayprojects";
 
 export const Showcase = ({ setBallCount }: ShowcaseProps) => {
   const [activeTab, setActiveTab] = useState("projetos");
