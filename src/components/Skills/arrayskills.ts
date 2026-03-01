@@ -13,7 +13,7 @@ import Node from "../../assets/images/skills/node.png";
 import Mongo from "../../assets/images/skills/mongo.png";
 import Mysql from "../../assets/images/skills/mysql.png";
 
-export const skills: Skill[] = [
+export const arrayskills: Skill[] = [
   {
     // HTML
     icon: Html,

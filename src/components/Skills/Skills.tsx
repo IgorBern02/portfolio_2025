@@ -1,7 +1,7 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { ModalSkillsProps } from "@/src/types/types";
-import { skills } from "./arrayskills";
+import { arrayskills } from "./arrayskills";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -37,7 +37,7 @@ const ModalSkills = memo(({ skills }: ModalSkillsProps) => {
 const SkillsSection = () => {
   return (
     <section className="w-full h-2/4 p-2 flex flex-col justify-around items-center gap-10 z-20 ">
-      <ModalSkills skills={skills} />
+      <ModalSkills skills={arrayskills} />
     </section>
   );
 };
