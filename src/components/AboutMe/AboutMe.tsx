@@ -31,7 +31,7 @@ export const AboutMe = () => {
       <div className="w-full h-auto flex flex-row items-center justify-start p-2 gap-4">
         {/* Botão de Baixar Currículo */}
         <div className="border flex items-center p-1 rounded-lg border-white/10">
-          <a href="/portfolio_2025/curriculo_igor_bernardes.pdf?v=2" download>
+          <a href="/portfolio_2025/resume.pdf?v=2" download>
             <button className="group relative p-1">
               <svg
                 className="w-7 h-7 text-gray-400 group-hover:text-white transition-colors"

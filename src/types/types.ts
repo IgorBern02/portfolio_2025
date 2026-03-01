@@ -1,68 +1,98 @@
-// Background component props and types
+import { ReactNode, ChangeEvent } from "react";
+
+/* =========================
+   COMMON TYPES
+========================= */
+
+export type TabType = "projetos" | "tecnologias";
+
+/* =========================
+   BACKGROUND
+========================= */
+
 export interface BackgroundProps {
   ballCount: number;
 }
 
-// Showcase component props and types
+/* =========================
+   SHOWCASE
+========================= */
+
 export interface ShowcaseProps {
-  setBallCount: (count: number) => void;
-  onTabChange: (tab: string) => void;
+  setBallCount: React.Dispatch<React.SetStateAction<number>>;
+  onTabChange?: (tab: TabType) => void;
 }
 
-// AboutMe component props and types
+/* =========================
+   ABOUT
+========================= */
+
 export interface TypingTextProps {
   text: string;
-  delay: number;
+  delay?: number; // delay pode ser opcional
 }
 
-// Header component props and types
+/* =========================
+   HEADER
+========================= */
+
 export interface MenuHamburguerProps {
   activeLink: string;
-  setActiveLink: (link: string) => void;
+  setActiveLink: React.Dispatch<React.SetStateAction<string>>;
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+/* =========================
+   PROJECTS
+========================= */
 
 export interface Project {
   name: string;
   img: string;
   desc: string;
-  site: string;
-  github: string;
+  site: `http${string}`; // força começar com http
+  github: `http${string}`;
 }
 
 export interface ModalProjectsProps {
   projects: Project[];
-  setBallCount: (count: number) => void;
+  setBallCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
-// Skills component props and types
+/* =========================
+   SKILLS
+========================= */
+
 export interface Skill {
   icon: string;
   name: string;
 }
 
-export type ModalSkillsProps = {
+export interface ModalSkillsProps {
   skills: Skill[];
-};
+}
 
-// Contact component props and types
-export type ContactType = {
+/* =========================
+   CONTACT
+========================= */
+
+export interface ContactType {
   name: string;
   url: string;
-  img: React.ReactNode;
-};
+  img: ReactNode;
+}
 
-export type ModalContactProps = {
+export interface ModalContactProps {
   contact: ContactType;
-};
+}
 
-export type PropsInputContact = {
-  type: string;
+export interface PropsInputContact {
+  type: React.HTMLInputTypeAttribute;
   name?: string;
   placeholder?: string;
   value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   required?: boolean;
-};
+}
