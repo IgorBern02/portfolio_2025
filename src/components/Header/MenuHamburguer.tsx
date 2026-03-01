@@ -1,6 +1,6 @@
+import { MenuHamburguerProps } from "@/src/types/types";
 import { scrollToId } from "../../utils/scrollToId";
 import { navItems } from "./navItems";
-import { MenuHamburguerProps } from "@/src/types/types";
 
 export const MenuHamburguer = ({
   activeLink,
