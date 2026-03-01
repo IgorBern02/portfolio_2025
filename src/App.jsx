@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { Header } from "./components/header/Header";
-import { AboutMe } from "./components/aboutMe/AboutMe";
+import { AboutMe } from "./components/aboutme/AboutMe";
 import { Footer } from "./components/footer/Footer";
 import { Background } from "./components/background/Background";
 import { Showcase } from "./components/showcase/Showcase";
