@@ -2,9 +2,17 @@ import BelezaEstilo from "../../assets/images/projects/beleza&estilo.png";
 import APIcars from "../../assets/images/projects/apicars.png";
 import GerarCertificado from "../../assets/images/projects/gerarcertificado.png";
 import FakeStore from "../../assets/images/projects/fakestore.png";
+import Taskflowpro from "../../assets/images/projects/taskflowpro.png";
 import { Project } from "@/src/types/types";
 
 export const arrayprojects: Project[] = [
+  {
+    img: Taskflowpro,
+    name: "TaskFlow Pro",
+    desc: "TaskFlow Pro é uma aplicação full stack de gerenciamento de tarefas no estilo Kanban, com autenticação JWT, API própria e interface moderna em React. Permite criar projetos, organizar tarefas em colunas e acompanhar o progresso em tempo real.",
+    github: "https://github.com/IgorBern02/taskflowpro",
+    site: "https://taskflowpro-nine.vercel.app/",
+  },
   {
     img: APIcars,
     name: "API de Carros",
